@@ -147,21 +147,26 @@
                             <h1 class="m-0">Login Now</h1>
                         </div>
                         <div class="card-body rounded-bottom bg-primary p-5">
-                            <form>
+                            <form id="loginForm" onsubmit="return redirectUser()">
                                 <div class="form-group">
                                     <input type="email" class="form-control border-0 p-4" placeholder="Your email" required="required" />
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control border-0 p-4" placeholder="Your password" required="required" />
                                 </div>
+                                <div class="form-group">
+                                    <select class="custom-select border-0 px-4" id="userType" style="height: 47px;" required="required">
+                                        <option selected>Select Login Type</option>
+                                        <option value="student">Student</option>
+                                        <option value="expert">Expert</option>
+                                    </select>
+                                </div>
                                 <div>
                                     <button class="btn btn-dark btn-block border-0 py-3" type="submit">Login</button>
                                 </div>
                                 <div class="text-center mt-3">
-                                    <div class="text-center mt-3">
-                                        <p class="text-white"><a href="signup.html" style="color: white;">Don't have an account? Sign Up</a></p>
-                                        <p class="text-white"><a href="forgotpass.html" style="color: white;">Forgot Password?</a></p>
-                                    </div>
+                                    <p class="text-white"><a href="signup.html" style="color: white;">Don't have an account? Sign Up</a></p>
+                                    <p class="text-white"><a href="forgotpass.html" style="color: white;">Forgot Password?</a></p>
                                 </div>
                             </form>
                         </div>
@@ -171,6 +176,23 @@
         </div>
     </div>
     <!-- Login End -->
+    <script>
+        function redirectUser() {
+            var userType = document.getElementById("userType").value;
+    
+            if (userType === "student") {
+                window.location.href = "studenthomepage.html"; // Redirect to student homepage
+            } else if (userType === "expert") {
+                window.location.href = "experthomepage.html"; // Redirect to expert homepage
+            } else {
+                alert("Please select a valid login type.");
+                return false; // Prevent form submission if no valid option is selected
+            }
+    
+            return false; // Prevent form from submitting to allow redirection
+        }
+    </script>
+        
     
 <!-- Footer Start -->
 <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">

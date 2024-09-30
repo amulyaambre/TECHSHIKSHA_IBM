@@ -106,9 +106,7 @@
                         <div class="navbar-nav py-0">
                             <a href="index.html" class="nav-item nav-link active">Home</a>
                             <a href="about.html" class="nav-item nav-link">About</a>
-                            <a href="course.html" class="nav-item nav-link">Courses</a>
-                            <a href="internship.html" class="nav-item nav-link">Internship</a>
-                            <a href="teacher.html" class="nav-item nav-link">Experts</a>
+                            
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div class="dropdown-menu rounded-0 m-0">
@@ -125,92 +123,56 @@
         </div>
     </div>
     <!-- Navbar End -->
-
-    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
-        <div class="container py-5">
-            <div class="row align-items-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <div class="mb-4">
-                        <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Need Any Courses</h5>
-                        <h1 class="text-white">30% Off For New Students</h1>
-                    </div>
-                    <p class="text-white" style="text-align: justify;">Ready to take your skills to the next level? Enroll in a course now and gain hands-on experience from industry experts. Whether you're looking to advance your career, learn something new, or explore immersive VR training, our courses are designed to prepare you for real-world success. Start your journey today!</p>
-                    <ul class="list-inline text-white m-0">
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Learn from industry experts with real-world experience.</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Earn certificates and boost your career prospects.</li>
-                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Experience immersive VR training for hands-on skills development.</li>
-                    </ul>
+    
+<div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="mb-4">
+                    <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Looking for Interns?</h5>
+                    <h1 class="text-white">Post Your Internship Opportunity</h1>
                 </div>
-                <div class="col-lg-5">
-                    <div class="card border-0">
-                        <div class="card-header bg-light text-center p-4">
-                            <h1 class="m-0">Sign Up Now</h1>
-                        </div>
-                        <div class="card-body rounded-bottom bg-primary p-5">
-                            <form id="registrationForm">
-                                <div class="form-group">
-                                    <input type="text" class="form-control border-0 p-4" placeholder="Your name" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control border-0 p-4" placeholder="Your email" required="required" />
-                                </div>
-                                <div class="form-group">
-                                    <select class="custom-select border-0 px-4" style="height: 47px;" id="roleSelect" required>
-                                        <option selected>Select Role</option>
-                                        <option value="1">Student</option>
-                                        <option value="2">Expert</option>
-                                    </select>
-                                </div>
-                                <!-- Resume upload (initially hidden) -->
-                                <div class="form-group" id="resumeUpload" style="display: none;">
-                                    <input type="file" class="form-control border-0 p-4" accept=".pdf, .doc, .docx" placeholder="Upload your resume" />
-                                </div>
-                                <!-- Password and Confirm Password fields -->
-                                <div class="form-group">
-                                    <input type="password" class="form-control border-0 p-4" placeholder="Password" required="required" id="password" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control border-0 p-4" placeholder="Confirm Password" required="required" id="confirmPassword" />
-                                </div>
-                                <div>
-                                    <button class="btn btn-dark btn-block border-0 py-3" type="submit">Sign Up</button>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <p class="text-white"> <a href="login.html" style="color: white;">Already have an account? Login</a></p>
-                                </div>
-                            </form>
-                        </div>
+                <p class="text-white" style="text-align: justify;">Looking for talented interns to join your company? Post your internship details and attract skilled individuals ready to learn and contribute to your company’s success. Share the internship role, skills required, and responsibilities for a successful collaboration.</p>
+                <ul class="list-inline text-white m-0">
+                    <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Attract skilled individuals with real potential.</li>
+                    <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Provide hands-on experience and shape future professionals.</li>
+                    <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Offer a learning environment with real-world challenges.</li>
+                </ul>
+            </div>
+            <div class="col-lg-5">
+                <div class="card border-0">
+                    <div class="card-header bg-light text-center p-4">
+                        <h1 class="m-0">Add Internship</h1>
+                    </div>
+                    <div class="card-body rounded-bottom bg-primary p-5">
+                        <form id="internshipForm" action="add_internship.php" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="company_name" class="form-control border-0 p-4" placeholder="Company Name" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="internship_title" class="form-control border-0 p-4" placeholder="Internship Title" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="skills_required" class="form-control border-0 p-4" placeholder="Skills Required (e.g., HTML, CSS, React)" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="internship_duration" class="form-control border-0 p-4" placeholder="Internship Duration (e.g., 6 months)" required="required" />
+                            </div>
+                            <div class="form-group">
+                                <textarea name="responsibilities" class="form-control border-0 p-4" placeholder="Roles and Responsibilities" rows="4" required="required"></textarea>
+                            </div>
+                            <div>
+                                <button class="btn btn-dark btn-block border-0 py-3" type="submit">Post Internship</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Registration End -->
-    
-    <!-- JavaScript to show/hide resume upload and validate password -->
-    <script>
-        document.getElementById('roleSelect').addEventListener('change', function () {
-            var resumeUpload = document.getElementById('resumeUpload');
-            if (this.value == '1') { // Student selected
-                resumeUpload.style.display = 'block';
-            } else {
-                resumeUpload.style.display = 'none';
-            }
-        });
-    
-        // Form validation for passwords
-        document.getElementById('registrationForm').addEventListener('submit', function (e) {
-            var password = document.getElementById('password').value;
-            var confirmPassword = document.getElementById('confirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                e.preventDefault(); // Prevent form submission
-                alert("Passwords do not match!");
-            }
-        });
-    </script>
-    
-    
+</div>
+<!-- Internship Form End -->
+
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
         <div class="row pt-5">
